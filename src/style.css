@@ -1,0 +1,259 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+.container {
+    max-width: 100%;
+    padding: 1rem;
+    display: flex;
+    gap: 3rem;
+    background-color: #8e753b;
+}
+
+.container.opacity {
+    opacity: .5;
+}
+
+.container-left {
+    padding: 1rem;
+    width: 30%;
+    height: 100%;
+    background-color: #dcde9a;
+}
+
+.container-left h1, .add-todo h2, .add-category h2 {
+    font-size: 1.6rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+}
+
+.add-todo h2, .add-category h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    gap: 1rem;
+    cursor: pointer;
+    background-color: #7b6244;
+    color: #fff;
+    padding: .5rem 1rem;
+    border-radius: 5px;
+    transition: background-color .3s;
+
+}
+
+.add-todo h2:hover, .add-category h2:hover {
+    background-color: #644d1c;
+}
+
+.container-left h1 i, .add-todo h2 i, .add-category h2 i{
+    /* color: #644d1c; */
+    font-size: 3rem;
+}
+
+.add-todo h2 i, .add-category h2 i {
+    font-size: 2rem;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+
+ul li {
+    position: relative; 
+    padding: 1rem 2rem;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: .5rem;
+}
+
+.date-todo li i, #categories-todo-list li i  {
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.container-right {
+    padding: 1rem;
+    width: 70%;
+    height: 100%;
+    /* background-color: #928148; */
+}
+
+.todo-list-container, .category-container {
+    display: none;
+    flex-direction: column;
+    padding: 2rem;
+    background-color: #dcde9a;
+    width: 60%;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    
+    z-index: 999;
+}
+
+.category-container {
+    width: 40%;
+}
+
+.todo-list-container form, .category-container form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 2rem;
+    background-color: #7b6244;
+    color: #fff;
+    padding: .6rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+}
+
+.close-button:hover {
+    background-color: #644d1c;
+}
+
+.todo-list-container form input[type="text"], .category-container form input[type="text"] {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    height: 3rem;
+    margin-bottom: 1rem;
+}
+
+.todo-list-container form .category-date {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    width: 100%;
+}
+
+.category-date-column {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    width: 100%;
+    height: 3rem;
+}
+
+
+.todo-list-container form select {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+.todo-list-container form textarea {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.todo-list-container form input[type="date"] {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+}
+
+.todo-list-container form .submit-button, .category-container form .submit-button {
+    padding: .5rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #7b6244;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color .3s;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.todo-list-container form button:hover, .category-container form button:hover {
+    background-color: #644d1c;
+}
+
+/* ====================Today todo List================== */
+
+.container-today, .container-week, .container-upcoming {
+    display: none;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 2rem;
+    color: rgb(56, 47, 32);
+}
+
+.container-today h2, .container-week h2, .container-upcoming h2 {
+    font-size: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.container-today h2 i, .container-week h2 i, .container-upcoming h2 i {
+    font-size: 5rem;
+}
+
+.todo-today, .todo-week, .todo-upcoming {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 2rem;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    margin-bottom: .5rem;
+
+}
+
+.todo-today input[type="checkbox"], .todo-week input[type="checkbox"], .todo-upcoming input[type="checkbox"] {
+    cursor: pointer;
+    transform: scale(2);
+}
+
+.todo-today-icons, .todo-week-icons, .todo-upcoming-icons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+.todo-today-icons i, .todo-week-icons i, .todo-upcoming-icons i {
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+.todo-today-icons i:hover, .todo-week-icons i:hover, .todo-upcoming-icons i:hover {
+    color: #7b6244;
+}
+
+/* ====================Category List================== */
+
+
+
