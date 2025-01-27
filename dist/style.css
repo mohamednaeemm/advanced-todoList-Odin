@@ -50,20 +50,26 @@ body {
     padding: .5rem 1rem;
     border-radius: 5px;
     transition: background-color .3s;
-
+    transition: transform 0.2s;
 }
 
 .add-todo h2:hover, .add-category h2:hover {
     background-color: #644d1c;
+    transform: scale(1.05);
 }
 
-.container-left h1 i, .add-todo h2 i, .add-category h2 i{
+.container-left h1 i {
     /* color: #644d1c; */
     font-size: 3rem;
 }
 
 .add-todo h2 i, .add-category h2 i {
     font-size: 2rem;
+    transition: transform 0.2s;
+}
+
+.add-todo h2:hover i, .add-category h2:hover i {
+    transform: scale(1.2);
 }
 
 ul {
@@ -81,11 +87,28 @@ ul li {
     align-items: center;
     gap: 1rem;
     margin-bottom: .5rem;
+    cursor: pointer;
 }
 
-.date-todo li i, #categories-todo-list li i  {
+/* For the li hover effect */
+ul li:hover {
+    background-color: #e0e0e0;
+    transform: scale(1.05);
+    transition: transform 0.2s, background-color 0.2s;
+}
+
+/* Target the icons inside the li */
+.date-todo li i,
+#categories-todo-list li i {
     font-size: 1.5rem;
     color: #333;
+    transition: transform 0.2s;
+}
+
+/* Scale the icon when the li is hovered */
+.date-todo li:hover i,
+#categories-todo-list li:hover i {
+    transform: scale(1.5);
 }
 
 .container-right {
@@ -204,7 +227,7 @@ ul li {
 
 /* ====================Today todo List================== */
 
-.container-today, .container-week, .container-upcoming {
+.container-today, .container-week, .container-upcoming, .container-completed, .container-category {
     display: none;
     flex-direction: column;
     gap: 1rem;
@@ -212,7 +235,11 @@ ul li {
     color: rgb(56, 47, 32);
 }
 
-.container-today h2, .container-week h2, .container-upcoming h2 {
+.container-category {
+    display: flex;
+}
+
+.container-today h2, .container-week h2, .container-upcoming h2, .container-completed h2, .container-category h2 {
     font-size: 2rem;
     font-weight: 800;
     margin-bottom: 1rem;
@@ -221,11 +248,11 @@ ul li {
     align-items: center;
 }
 
-.container-today h2 i, .container-week h2 i, .container-upcoming h2 i {
+.container-today h2 i, .container-week h2 i, .container-upcoming h2 i, .container-completed h2 i, .container-category h2 i {
     font-size: 5rem;
 }
 
-.todo-today, .todo-week, .todo-upcoming {
+.todo-today, .todo-week, .todo-upcoming, .todo-completed, .todo-category {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -236,23 +263,23 @@ ul li {
 
 }
 
-.todo-today input[type="checkbox"], .todo-week input[type="checkbox"], .todo-upcoming input[type="checkbox"] {
+.todo-today input[type="checkbox"], .todo-week input[type="checkbox"], .todo-upcoming input[type="checkbox"], .todo-completed input[type="checkbox"], .todo-category input[type="checkbox"] {
     cursor: pointer;
     transform: scale(2);
 }
 
-.todo-today-icons, .todo-week-icons, .todo-upcoming-icons {
+.todo-today-icons, .todo-week-icons, .todo-upcoming-icons, .todo-completed-icons, .todo-category-icons {
     display: flex;
     justify-content: flex-end;
     gap: 1rem;
 }
 
-.todo-today-icons i, .todo-week-icons i, .todo-upcoming-icons i {
+.todo-today-icons i, .todo-week-icons i, .todo-upcoming-icons i, .todo-completed-icons i, .todo-category-icons i {
     font-size: 1.5rem;
     cursor: pointer;
 }
 
-.todo-today-icons i:hover, .todo-week-icons i:hover, .todo-upcoming-icons i:hover {
+.todo-today-icons i:hover, .todo-week-icons i:hover, .todo-upcoming-icons i:hover, .todo-completed-icons i:hover, .todo-category-icons i:hover {
     color: #7b6244;
 }
 
