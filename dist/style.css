@@ -235,7 +235,7 @@ ul li:hover {
     color: rgb(56, 47, 32);
 }
 
-.container-category {
+.container-today {
     display: flex;
 }
 
@@ -252,7 +252,16 @@ ul li:hover {
     font-size: 5rem;
 }
 
+.todo-today-full, .todo-week-full, .todo-upcoming-full, .todo-completed-full, .todo-category-full {
+    flex-direction: column;
+    background-color: #dcde9a;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+
 .todo-today, .todo-week, .todo-upcoming, .todo-completed, .todo-category {
+    width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -260,7 +269,15 @@ ul li:hover {
     background-color: #f0f0f0;
     border-radius: 5px;
     margin-bottom: .5rem;
+    transition: all 0.3s ease;
+}
 
+.todo-description {
+    display: none; /* Hidden by default */
+    padding: 0.5rem 2rem;
+    font-size: 1rem;
+    border-radius: 5px;
+    line-height: 1.5;
 }
 
 .todo-today input[type="checkbox"], .todo-week input[type="checkbox"], .todo-upcoming input[type="checkbox"], .todo-completed input[type="checkbox"], .todo-category input[type="checkbox"] {
@@ -270,7 +287,6 @@ ul li:hover {
 
 .todo-today-icons, .todo-week-icons, .todo-upcoming-icons, .todo-completed-icons, .todo-category-icons {
     display: flex;
-    justify-content: flex-end;
     gap: 1rem;
 }
 

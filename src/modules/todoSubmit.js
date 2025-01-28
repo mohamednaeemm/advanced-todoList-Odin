@@ -21,10 +21,10 @@ export function todoSubmit() {
         }
 
         // Validate category selection
-        if (!category) {
-            alert("Please select a category.");
-            return;
-        }
+        // if (!category) {
+        //     alert("Please select a category.");
+        //     return;
+        // }
 
         // Validate date
         if (isNaN(date.getTime())) {

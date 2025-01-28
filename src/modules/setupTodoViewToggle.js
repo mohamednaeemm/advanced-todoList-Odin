@@ -1,10 +1,23 @@
+import { setupTodoExpand } from './setupTodoExpand.js';
+
 export function setupTodoViewToggle() {
+    
     const dateListItems = document.querySelectorAll('#date-todo-list li');
     const categoryListItems = document.querySelectorAll('#categories-todo-list li');
     const containers = document.querySelectorAll('.container-right > div');
 
     function handleDateClick(event) {
         const clickedText = event.target.textContent.trim().toLowerCase();
+
+        // if clicked on the same container, do nothing
+
+        
+
+        
+        // if (targetContainer.style.display === 'flex') {
+        //     setupTodoExpand();
+        //     return;
+        // }
 
         // Hide all containers
         containers.forEach(container => {
@@ -15,7 +28,10 @@ export function setupTodoViewToggle() {
         const targetContainer = document.querySelector(`.container-${clickedText}`);
         if (targetContainer) {
             targetContainer.style.display = 'flex';
+            console.log(targetContainer.style.display);
+            setupTodoExpand(targetContainer);
         }
+        
     }
 
     function handleCategoryClick(event) {
@@ -30,7 +46,7 @@ export function setupTodoViewToggle() {
         const categoryContainer = document.querySelector('.container-category');
         if (categoryContainer) {
             categoryContainer.style.display = 'flex';
-
+            setupTodoExpand(categoryContainer);
             // Optionally, filter tasks by category inside the category container
             // const tasks = categoryContainer.querySelectorAll('.todo-category');
             // tasks.forEach(task => {
@@ -48,4 +64,12 @@ export function setupTodoViewToggle() {
     categoryListItems.forEach(item => {
         item.addEventListener('click', handleCategoryClick);
     });
+
+    // Initialize for the first visible container
+    const firstVisibleContainer = Array.from(containers).find(
+        container => window.getComputedStyle(container).display === 'flex'
+    );
+    if (firstVisibleContainer) {
+        setupTodoExpand(firstVisibleContainer);
+    }
 }
