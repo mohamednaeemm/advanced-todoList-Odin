@@ -35,7 +35,7 @@ export function setupTodoExpand(container) {
                 // Toggle the clicked todo
                 if (chevron.className === 'bx bxs-chevron-left') {
                     chevron.className = 'bx bxs-chevron-down';
-                    description.textContent = todo.dataset.description || 'There is no description.';
+                    // description.textContent = todo.dataset.description || 'There is no description.';
                     description.style.display = 'block';
                 } else {
                     chevron.className = 'bx bxs-chevron-left';

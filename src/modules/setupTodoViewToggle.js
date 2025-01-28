@@ -28,7 +28,6 @@ export function setupTodoViewToggle() {
         const targetContainer = document.querySelector(`.container-${clickedText}`);
         if (targetContainer) {
             targetContainer.style.display = 'flex';
-            console.log(targetContainer.style.display);
             setupTodoExpand(targetContainer);
         }
         

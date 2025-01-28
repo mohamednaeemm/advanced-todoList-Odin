@@ -1,7 +1,10 @@
+import { todayDate } from './todayDate.js';
+
 export function showAndHide(show, todo) {
     const container = document.querySelector('.container');
     const todoContainer = document.querySelector('.todo-list-container');
     const category = document.querySelector('.category-container');
+    todayDate();
 
   if(show && todo) {
     container.classList.add('opacity');
