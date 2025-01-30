@@ -4,7 +4,7 @@ export function setupTodoExpand(container) {
     const classNames = container.className.split('-');
     if (classNames.length > 1) {
         const containerCategory = classNames.pop();
-        const todoFulls = container.querySelectorAll(`.todo-${containerCategory}-full`);
+        const todoFulls = container.querySelectorAll(`.todo-full-${containerCategory}`);
 
         // Remove existing event listeners if any by cloning the node
         todoFulls.forEach(todoFull => {
@@ -12,17 +12,17 @@ export function setupTodoExpand(container) {
             todoFull.parentNode.replaceChild(cloned, todoFull);
         });
 
-        const refreshedTodoFulls = container.querySelectorAll(`.todo-${containerCategory}-full`);
+        const refreshedTodoFulls = container.querySelectorAll(`.todo-full-${containerCategory}`);
 
         refreshedTodoFulls.forEach(todoFull => {
             const todo = todoFull.querySelector(`.todo-${containerCategory}`);
-            const chevron = todo.querySelector(`.todo-${containerCategory}-icons i:last-child`);
+            const chevron = todo.querySelector(`.todo-icons-${containerCategory} i:last-child`);
             const description = todoFull.querySelector('.todo-description');
 
             todoFull.addEventListener('click', () => {
                 refreshedTodoFulls.forEach(otherTodoFull => {
                     const otherTodo = otherTodoFull.querySelector(`.todo-${containerCategory}`);
-                    const otherChevron = otherTodo.querySelector(`.todo-${containerCategory}-icons i:last-child`);
+                    const otherChevron = otherTodo.querySelector(`.todo-icons-${containerCategory} i:last-child`);
                     const otherDescription = otherTodoFull.querySelector('.todo-description');
 
                     if (otherTodoFull !== todoFull) {

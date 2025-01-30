@@ -1,6 +1,5 @@
 import { showAndHide } from './showandhide.js';
 
-
 export function initializeEventListeners() {
     const addTodoBtn = document.querySelector('.add-todo');
     const closeTodoBtn = document.querySelector('.close-todo');

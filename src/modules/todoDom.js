@@ -1,13 +1,14 @@
 export function todoDom(type, title, description, dueDate, category) {
+    console.log(category);
     const todoContainer = document.createElement('div');
-    todoContainer.className = `todo-${type}-full`;
+    todoContainer.className = `todo-full-${type}`;
 
     const todoType = document.createElement('div');
     todoType.className = `todo-${type}`;
 
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
-    checkbox.className = `todo-${type}-checkbox`;
+    // checkbox.className = `todo-${type}-checkbox`;
 
     const titleElement = document.createElement('h3');
     titleElement.textContent = title;
@@ -17,13 +18,13 @@ export function todoDom(type, title, description, dueDate, category) {
     categoryElement.textContent = category;
 
     const dateElement = document.createElement('span');
-    dateElement.className = `todo-${type}-date`;
+    dateElement.className = `todo-date-${type}`;
     const date = new Date(dueDate);
     const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;
     dateElement.textContent = formattedDate;
 
     const iconsContainer = document.createElement('div');
-    iconsContainer.className = `todo-${type}-icons`;
+    iconsContainer.className = `todo-icons-${type}`;
 
     const editIcon = document.createElement('i');
     editIcon.className = 'bx bxs-edit';

@@ -9,16 +9,6 @@ export function setupTodoViewToggle() {
     function handleDateClick(event) {
         const clickedText = event.target.textContent.trim().toLowerCase();
 
-        // if clicked on the same container, do nothing
-
-        
-
-        
-        // if (targetContainer.style.display === 'flex') {
-        //     setupTodoExpand();
-        //     return;
-        // }
-
         // Hide all containers
         containers.forEach(container => {
             container.style.display = 'none';
@@ -34,7 +24,8 @@ export function setupTodoViewToggle() {
     }
 
     function handleCategoryClick(event) {
-        const clickedCategory = event.target.textContent.trim().toLowerCase();
+        const clickedCategory = event.target.textContent.trim();
+        console.log(clickedCategory);
 
         // Hide all containers
         containers.forEach(container => {
@@ -42,16 +33,10 @@ export function setupTodoViewToggle() {
         });
 
         // Show the category container
-        const categoryContainer = document.querySelector('.container-category');
+        const categoryContainer = document.querySelector(`.container-category${clickedCategory}`);
         if (categoryContainer) {
             categoryContainer.style.display = 'flex';
             setupTodoExpand(categoryContainer);
-            // Optionally, filter tasks by category inside the category container
-            // const tasks = categoryContainer.querySelectorAll('.todo-category');
-            // tasks.forEach(task => {
-            //     const categoryName = task.querySelector('.category-name').textContent.trim().toLowerCase();
-            //     task.style.display = categoryName === clickedCategory ? 'flex' : 'none';
-            // });
         }
     }
 

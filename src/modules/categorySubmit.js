@@ -1,4 +1,6 @@
 import { showAndHide } from './showandhide.js';
+import { categoryDom } from './categoryDom.js';
+import { setupTodoViewToggle } from './setupTodoViewToggle.js';
 
 export function categorySubmit() {
     const input = document.getElementById('category-input');
@@ -48,10 +50,12 @@ export function categorySubmit() {
         categoryOption.textContent = finalValue;
         addCategoryOption.appendChild(categoryOption);
 
+        // Create and append the new category container
+        categoryDom(finalValue);
         
         // Hide the category input container
         showAndHide(false, false);
-
+        setupTodoViewToggle();
         // Clear the input field
         input.value = '';
     });

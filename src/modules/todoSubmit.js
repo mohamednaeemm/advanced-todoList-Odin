@@ -50,26 +50,14 @@ export function todoSubmit() {
             return;
         }
 
-        
-
-        // Add to category container
-        // const categoryContainer = document.querySelector(`#categories-todo-list li:contains("${category}")`);
-        // if (categoryContainer) {
-        //     categoryContainer.appendChild(todoItem.cloneNode(true));
-        // }
-
         // Add to date-specific containers
         const oneDayInMs = 24 * 60 * 60 * 1000;
         const diffInDays = Math.round((date - today) / oneDayInMs);
 
         if (diffInDays === 0) {
-            // Add to "Today" container
-            // const todayContainer = document.querySelector('.today-container ul');
             // todayContainer.appendChild(todoItem.cloneNode(true));
             const todoToday = todoDom('today', title, description, date, category);
             contianerToday.appendChild(todoToday);
-            console.log(description);
-            console.log(descriptionInput);
 
             const todoWeek = todoDom('week', title, description, date, category);
             containerWeek.appendChild(todoWeek);
@@ -83,22 +71,25 @@ export function todoSubmit() {
 
             const todoUpcoming = todoDom('upcoming', title, description, date, category);
             containerUpcoming.appendChild(todoUpcoming);
-            // Add to "Week" container
-            // const weekContainer = document.querySelector('.week-container ul');
             // weekContainer.appendChild(todoItem.cloneNode(true));
 
         } else if (diffInDays > 7) {
-            // Add to "Upcoming" container
-            // const upcomingContainer = document.querySelector('.upcoming-container ul');
             // upcomingContainer.appendChild(todoItem.cloneNode(true));
             const todoUpcoming = todoDom('upcoming', title, description, date, category);
             containerUpcoming.appendChild(todoUpcoming);
         }
+
+        if (category) {
+            const todoCategory = todoDom(`category${category}`, title, description, date, category);
+            
+            const categoryContainer = document.querySelector(`.container-category${category}`);
+            categoryContainer.appendChild(todoCategory);
+        }
+
         showAndHide(false, true);
 
         setupTodoExpand(whichContainerIsOpen());
         
-
         // Reset the form
         titleInput.value = "";
         descriptionInput.value = "";
