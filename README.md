@@ -3,7 +3,7 @@
 ![Todo List Preview](./src/assets/images/projectPreview.png)
 
 ## Live Demo
-[Check out the live version here!](#https://mohamednaeemm.github.io/advanced-todoList-Odin)
+[Check out the live version here!](https://mohamednaeemm.github.io/advanced-todoList-Odin)
 
 ## Project Overview
 This is a simple and interactive Todo List application built using **Webpack**, **HTML**, **CSS**, and **JavaScript**. The project is part of [The Odin Project](https://www.theodinproject.com/) curriculum, focusing on practical web development skills.
