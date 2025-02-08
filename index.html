@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <link rel="stylesheet" href="./style.css">
+    <title>My TODO LIST</title>
+<script defer src="main.js"></script><link href="style.css" rel="stylesheet"></head>
+<body>
+    <div class="container">
+        <div class="container-left">
+            <h1><i class='bx bx-list-check'></i>My TODO LIST</h1>
+            <div class="add-todo">
+                <h2><i class='bx bx-plus-circle'></i>ADD A Task</h2>
+            </div>
+            <div class="date-todo">
+                <ul id="date-todo-list">  
+                    <li><i class='bx bxs-calendar'></i>Today</li>
+                    <li><i class='bx bx-calendar-week'></i>Week</li>
+                    <li><i class='bx bx-calendar'></i>Upcoming</li>
+                    <li><i class='bx bx-calendar-check' ></i>Completed</li>
+                </ul>
+            </div>
+            <hr>
+            <br>
+            <div class="categories-todo">
+                <div class="add-category">
+                    <h2><i class='bx bx-hash'></i> ADD A Category</h2>
+                </div>
+                <ul id="categories-todo-list">
+                    <li>Programming</li>
+                    <li>English</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container-right">
+            <div class="container-today">
+                <h2><i class='bx bxs-calendar'></i>Today's Tasks</h2>
+                <div class="todo-full-today" data-id="1738952256319">
+                    <div class="todo-today">
+                        <input type="checkbox" class="todo-today-checkbox checked-todo">
+                        <h3>Study React</h3>
+                        <h4 class="category-name">Programming</h4>
+                        <span class="todo-date-today">25-1-2025</span>
+                        <div class="todo-icons-today">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study React and do some problem solving</p>
+                </div>
+                <div class="todo-full-today" data-id="1738951566629">
+                    <div class="todo-today">
+                        <input type="checkbox" class="todo-today-checkbox checked-todo">
+                        <h3>Study Grammer</h3>
+                        <h4 class="category-name">English</h4>
+                        <span class="todo-today-date">25-1-2025</span>
+                        <div class="todo-icons-today">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study Present Simple</p>
+                </div>
+            </div>
+            <div class="container-week">
+                <h2><i class='bx bx-calendar-week'></i>Week's Tasks</h2>
+                <div class="todo-full-week" data-id="1738952256319">
+                    <div class="todo-week">
+                        <input type="checkbox" class="todo-week-checkbox checked-todo">
+                        <h3>Study React</h3>
+                        <h4 class="category-name">Programming</h4>
+                        <span class="todo-date-week">25-1-2025</span>
+                        <div class="todo-icons-week">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study React and do some problem solving</p>
+                </div>
+                <div class="todo-full-week" data-id="1738951566629">
+                    <div class="todo-week">
+                        <input type="checkbox" class="todo-week-checkbox checked-todo">
+                        <h3>Study Grammer</h3>
+                        <h4 class="category-name">English</h4>
+                        <span class="todo-week-date">25-1-2025</span>
+                        <div class="todo-icons-week">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study Present Simple</p>
+                </div>
+            </div>
+            <div class="container-upcoming">
+                <h2><i class='bx bx-calendar'></i>Upcoming Tasks</h2>
+                <div class="todo-full-upcoming" data-id="1738952256319">
+                    <div class="todo-upcoming">
+                        <input type="checkbox" class="todo-upcoming-checkbox checked-todo">
+                        <h3>Study React</h3>
+                        <h4 class="category-name">Programming</h4>
+                        <span class="todo-date-upcoming">25-1-2025</span>
+                        <div class="todo-icons-upcoming">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study React and do some problem solving</p>
+                </div>
+                <div class="todo-full-upcoming" data-id="1738951566629">
+                    <div class="todo-upcoming">
+                        <input type="checkbox" class="todo-upcoming-checkbox checked-todo">
+                        <h3>Study Grammer</h3>
+                        <h4 class="category-name">English</h4>
+                        <span class="todo-upcoming-date">25-1-2025</span>
+                        <div class="todo-icons-upcoming">
+                            <i class='bx bxs-edit edit-todo'></i>
+                            <i class='bx bxs-trash delete-todo'></i>
+                            <i class='bx bxs-chevron-left'></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study Present Simple</p>
+                </div>
+            </div>
+            <div class="container-completed">
+                <h2><i class='bx bx-calendar-check'></i>Completed Tasks</h2>
+            </div>
+            <div class="container-categoryProgramming" style="display: none;">
+                <h2><i class="bx bx-hash"></i>Programming</h2>
+                <div class="category-buttons">
+                    <button class="category-delete">Delete Category <i class="bx bxs-trash"></i></button>
+                    <button class="category-edit">Edit Category <i class="bx bxs-edit"></i></button>
+                    <button class="category-add-todo">Add A Task <i class="bx bx-plus"></i></button>
+                </div>
+                <div class="todo-full-categoryProgramming" data-id="1738952256319">
+                    <div class="todo-categoryProgramming">
+                        <input type="checkbox" class="checked-todo">
+                        <h3>Study React</h3>
+                        <h4 class="category-name">Programming</h4>
+                        <span class="todo-date-categoryProgramming">7-2-2025</span>
+                        <div class="todo-icons-categoryProgramming">
+                            <i class="bx bxs-edit edit-todo"></i>
+                            <i class="bx bxs-trash delete-todo"></i>
+                            <i class="bx bxs-chevron-left"></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study React and do some problem solving</p>
+                </div>
+            </div>
+            <div class="container-categoryEnglish" style="display: none;">
+                <h2><i class="bx bx-hash"></i>English</h2>
+                <div class="category-buttons">
+                    <button class="category-delete">Delete Category <i class="bx bxs-trash"></i></button>
+                    <button class="category-edit">Edit Category <i class="bx bxs-edit"></i></button>
+                    <button class="category-add-todo">Add A Task <i class="bx bx-plus"></i></button>
+                </div>
+                <div class="todo-full-categoryEnglish" data-id="1738951566629">
+                    <div class="todo-categoryEnglish">
+                        <input type="checkbox" class="checked-todo">
+                        <h3>Study Grammer</h3>
+                        <h4 class="category-name">English</h4>
+                        <span class="todo-date-categoryEnglish">7-2-2025</span>
+                        <div class="todo-icons-categoryEnglish">
+                            <i class="bx bxs-edit edit-todo"></i>
+                            <i class="bx bxs-trash delete-todo"></i>
+                            <i class="bx bxs-chevron-left"></i>
+                        </div>
+                    </div>
+                    <p class="todo-description">Study Present Simple</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="todo-list-container">
+        <button id="close" class="close-button close-todo"><i class='bx bx-x'></i></button>
+        <form>
+            <label for="todo-input">Title</label>
+            <input type="text" id="todo-input" placeholder="Add a new todo" required>
+            <label for="description">Description</label>
+            <textarea id="description" placeholder="Add a description"></textarea>
+            <div class="category-date">
+                <div class="category-date-column">
+                <label for="category">Category</label>
+                <select id="category">
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="Programming">Programming</option>
+                    <option value="English">English</option>
+                </select>
+            </div>
+            <div class="category-date-column">
+                <label for="date">Date</label>
+                <input type="date" id="date" required>
+            </div>
+            </div>
+            
+
+            <button type="submit" id="add-todo-btn" class="submit-button"><i class='bx bx-plus'></i></button>
+        </form>
+    </div>
+    <div class="category-container">
+        <button id="close-category" class="close-button close-category"><i class='bx bx-x'></i></button>
+        <form>
+            <label for="category-input">Category</label>
+            <input type="text" id="category-input" placeholder="Add a new category" required>
+            <button type="submit" id="add-category-btn" class="submit-button category-submit-button"><i class='bx bx-plus'></i></button>
+        </form>
+
+    </div>
+    <script type="module" src="./app.js"></script>
+</body>
+</html>
