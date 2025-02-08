@@ -1,7 +1,8 @@
-export function todoDom(type, title, description, dueDate, category) {
-    console.log(category);
+export function todoDom(id, type, title, description, dueDate, category) {
     const todoContainer = document.createElement('div');
     todoContainer.className = `todo-full-${type}`;
+
+    todoContainer.dataset.id = id;
 
     const todoType = document.createElement('div');
     todoType.className = `todo-${type}`;
@@ -9,6 +10,7 @@ export function todoDom(type, title, description, dueDate, category) {
     const checkbox = document.createElement('input');
     checkbox.type = 'checkbox';
     // checkbox.className = `todo-${type}-checkbox`;
+    checkbox.className = 'checked-todo';
 
     const titleElement = document.createElement('h3');
     titleElement.textContent = title;
@@ -27,10 +29,10 @@ export function todoDom(type, title, description, dueDate, category) {
     iconsContainer.className = `todo-icons-${type}`;
 
     const editIcon = document.createElement('i');
-    editIcon.className = 'bx bxs-edit';
+    editIcon.className = 'bx bxs-edit edit-todo';
 
     const trashIcon = document.createElement('i');
-    trashIcon.className = 'bx bxs-trash';
+    trashIcon.className = 'bx bxs-trash delete-todo';
 
     const chevronIcon = document.createElement('i');
     chevronIcon.className = 'bx bxs-chevron-left';

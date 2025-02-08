@@ -25,7 +25,6 @@ export function setupTodoViewToggle() {
 
     function handleCategoryClick(event) {
         const clickedCategory = event.target.textContent.trim();
-        console.log(clickedCategory);
 
         // Hide all containers
         containers.forEach(container => {

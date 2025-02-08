@@ -1,4 +1,4 @@
-import { showAndHide } from './showandhide.js';
+import { showAndHide } from './showAndHide.js';
 import { categoryDom } from './categoryDom.js';
 import { setupTodoViewToggle } from './setupTodoViewToggle.js';
 

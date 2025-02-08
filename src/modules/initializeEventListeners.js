@@ -1,4 +1,4 @@
-import { showAndHide } from './showandhide.js';
+import { showAndHide } from './showAndHide.js';
 
 export function initializeEventListeners() {
     const addTodoBtn = document.querySelector('.add-todo');

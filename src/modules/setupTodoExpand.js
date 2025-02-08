@@ -1,3 +1,8 @@
+import { editTodo } from "./todoButtons";
+import { setupEditIcons } from "./setupEditIcons";
+import { setupDeleteIcons } from "./setupDeleteIcons";
+import { setupCheckedButtons } from "./setupCheckedButtons";
+
 export function setupTodoExpand(container) {
     if (!container) return;
 
@@ -18,6 +23,22 @@ export function setupTodoExpand(container) {
             const todo = todoFull.querySelector(`.todo-${containerCategory}`);
             const chevron = todo.querySelector(`.todo-icons-${containerCategory} i:last-child`);
             const description = todoFull.querySelector('.todo-description');
+
+            const editIcons = todoFull.querySelectorAll('.edit-todo');
+            const deleteIcons = todoFull.querySelectorAll('.delete-todo');
+            const checkedButtons = todoFull.querySelectorAll('.checked-todo');
+
+            if(editIcons) {
+                setupEditIcons();
+            }
+
+            if(deleteIcons) {
+                setupDeleteIcons();
+            }
+
+            if(checkedButtons) {
+                setupCheckedButtons();
+            }
 
             todoFull.addEventListener('click', () => {
                 refreshedTodoFulls.forEach(otherTodoFull => {
