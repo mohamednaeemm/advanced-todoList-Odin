@@ -146,7 +146,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpac
   \**********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   todayDate: () => (/* binding */ todayDate)\n/* harmony export */ });\nfunction todayDate() {\r\n        const dateInput = document.getElementById('date');\r\n        const today = new Date().toISOString().split('T')[0];\r\n        dateInput.value = today;\r\n}\n\n//# sourceURL=webpack:///./src/modules/todayDate.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export */ __webpack_require__.d(__webpack_exports__, {\n/* harmony export */   todayDate: () => (/* binding */ todayDate)\n/* harmony export */ });\nfunction todayDate() {\r\n    const dateElements = document.getElementsByClassName('date');\r\n    const date = new Date();\r\n    \r\n    const dateInput = document.getElementById('date');\r\n    const today = new Date().toISOString().split('T')[0];\r\n    dateInput.value = today;\r\n    const formattedDate = `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`;\r\n    for (let element of dateElements) {\r\n        element.textContent = formattedDate;\r\n    }\r\n}\r\n\r\ndocument.addEventListener('DOMContentLoaded', todayDate);\n\n//# sourceURL=webpack:///./src/modules/todayDate.js?");
 
 /***/ }),
 
